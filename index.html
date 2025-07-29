@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Resume & Portfolio Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background: #f9f9fb;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+    .cta-buttons a {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+    .cta-buttons .primary {
+      background: #fff;
+      color: #764ba2;
+    }
+    .cta-buttons .secondary {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .feature {
+      flex: 1 1 200px;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .feature h3 {
+      margin-bottom: 10px;
+    }
+    .samples, .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .sample, .testimonial {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    }
+    .testimonial p {
+      font-style: italic;
+    }
+    .testimonial span {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .pricing-summary {
+      text-align: center;
+      background: #eee;
+      padding: 40px 20px;
+      border-radius: 12px;
+    }
+    .pricing-summary a {
+      color: #764ba2;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Build Stunning Interactive Resumes & Portfolios in Minutes</h1>
+    <div class="cta-buttons">
+      <a href="#" class="primary">Get Started Free</a>
+      <a href="#" class="secondary">View Demo</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 style="text-align:center; margin-bottom: 30px;">Features</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Drag & Drop Editor</h3>
+        <p>Intuitive editing experience with live preview.</p>
+      </div>
+      <div class="feature">
+        <h3>AI Resume Writing</h3>
+        <p>Smart suggestions to perfect your wording.</p>
+      </div>
+      <div class="feature">
+        <h3>Custom Templates</h3>
+        <p>Modern, professional, and creative layouts.</p>
+      </div>
+      <div class="feature">
+        <h3>Portfolio Integration</h3>
+        <p>Link projects, case studies, and visuals seamlessly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 style="text-align:center; margin-bottom: 30px;">Sample Showcase</h2>
+    <div class="samples">
+      <div class="sample">
+        <img src="https://via.placeholder.com/300x180" alt="Sample Resume" style="width:100%; border-radius: 8px;">
+        <p style="margin-top:10px;">Modern Resume Example</p>
+      </div>
+      <div class="sample">
+        <img src="https://via.placeholder.com/300x180" alt="Portfolio Preview" style="width:100%; border-radius: 8px;">
+        <p style="margin-top:10px;">Portfolio with Case Studies</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 style="text-align:center; margin-bottom: 30px;">What Users Are Saying</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Super easy to use and made my resume stand out instantly!"</p>
+        <span>- Jordan M., Designer</span>
+      </div>
+      <div class="testimonial">
+        <p>"I landed 3 interviews in one week using this builder."</p>
+        <span>- Alex R., Developer</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pricing-summary">
+    <h2>Free vs Premium</h2>
+    <p>Start free and upgrade anytime for advanced features like PDF export, analytics, and custom domains.</p>
+    <p><a href="#">See detailed pricing</a></p>
+  </section>
+
+  <footer>
+    <p>
+      <a href="#">About</a> |
+      <a href="#">Contact</a> |
+      <a href="#">FAQ</a> |
+      <a href="#">Terms</a> |
+      <a href="#">Privacy</a> |
+      <a href="#">LinkedIn</a> |
+      <a href="#">Twitter</a>
+    </p>
+  </footer>
+
+  <script>
+    // Smooth scroll for demo purpose
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
