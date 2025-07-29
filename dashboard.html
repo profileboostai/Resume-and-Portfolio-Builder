@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-full flex font-sans">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-md p-6 space-y-6">
+    <h2 class="text-xl font-bold text-gray-800">User Portal</h2>
+    <nav class="space-y-4">
+      <a href="#" class="block text-gray-700 hover:text-blue-600">📄 My Resumes</a>
+      <a href="#" class="block text-gray-700 hover:text-blue-600">🖼️ My Portfolios</a>
+      <a href="#" class="block text-gray-700 hover:text-blue-600">📚 Templates Library</a>
+      <a href="#" class="block text-gray-700 hover:text-blue-600">⚙️ Settings / Profile</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-8 bg-gray-100 space-y-8 overflow-y-auto">
+    <!-- Header -->
+    <div class="flex justify-between items-center">
+      <h1 class="text-2xl font-semibold">Dashboard</h1>
+    </div>
+
+    <!-- Quick Start -->
+    <div class="grid grid-cols-2 gap-4">
+      <button class="bg-blue-600 text-white py-4 px-6 rounded-xl shadow hover:bg-blue-700 transition">
+        + Create New Resume
+      </button>
+      <button class="bg-green-600 text-white py-4 px-6 rounded-xl shadow hover:bg-green-700 transition">
+        + Create New Portfolio
+      </button>
+    </div>
+
+    <!-- Widgets Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Recently Edited -->
+      <div class="bg-white rounded-xl p-5 shadow-md">
+        <h3 class="text-lg font-bold mb-3">📄 Recently Edited</h3>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li>Resume – UI/UX Designer <span class="text-gray-400">• Jul 27</span></li>
+          <li>Portfolio – Dev Projects <span class="text-gray-400">• Jul 25</span></li>
+          <li>Resume – Backend Engineer <span class="text-gray-400">• Jul 22</span></li>
+        </ul>
+      </div>
+
+      <!-- Resume Health Score -->
+      <div class="bg-white rounded-xl p-5 shadow-md">
+        <h3 class="text-lg font-bold mb-3">❤️ Resume Health Score</h3>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-blue-600">82%</div>
+          <p class="text-sm text-gray-500">Looks good! Add more experience.</p>
+        </div>
+      </div>
+
+      <!-- AI Suggestions -->
+      <div class="bg-white rounded-xl p-5 shadow-md">
+        <h3 class="text-lg font-bold mb-3">🤖 AI Suggestions</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+          <li>Use strong action verbs in your resume.</li>
+          <li>Add quantifiable results in job descriptions.</li>
+          <li>Your portfolio is missing a project description.</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
