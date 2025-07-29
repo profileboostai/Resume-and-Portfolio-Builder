@@ -130,7 +130,29 @@ input {
     </p>
   </div>
 
-  <script src="script.js"></script>
-</body>
+ <script>
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
 
+  // Store to localStorage (you could later replace this with real API calls)
+  localStorage.setItem("user", JSON.stringify({ email, password }));
+
+  // Redirect to a dashboard or next page
+  window.location.href = "dashboard.html";
+});
+
+document.getElementById("guestAccess").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  // Simulate guest access
+  localStorage.setItem("user", JSON.stringify({ guest: true }));
+
+  // Redirect to dashboard or guest page
+  window.location.href = "dashboard.html";
+});
+ </script>
+
+</body>
 </html>
