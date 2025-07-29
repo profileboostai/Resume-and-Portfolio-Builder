@@ -2,114 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up / Login</title>
- <style>
-   body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: #f4f7fb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f4f7fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-.container {
-  background: #fff;
-  padding: 2rem 3rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-}
+    .container {
+      background: #fff;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
 
-h2 {
-  margin-bottom: 0.5rem;
-  color: #333;
-}
+    h2 {
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
 
-.subtitle {
-  color: #666;
-  margin-bottom: 2rem;
-}
+    .subtitle {
+      color: #666;
+      margin-bottom: 2rem;
+    }
 
-input {
-  width: 100%;
-  padding: 12px;
-  margin: 0.5rem 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
 
-.primary-btn {
-  width: 100%;
-  padding: 12px;
-  background-color: #4f46e5;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 1rem;
-}
+    .primary-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
 
-.primary-btn:hover {
-  background-color: #4338ca;
-}
+    .primary-btn:hover {
+      background-color: #4338ca;
+    }
 
-.or-divider {
-  margin: 1.5rem 0;
-  font-size: 0.9rem;
-  color: #999;
-}
+    .or-divider {
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: #999;
+    }
 
-.oauth-buttons button {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  cursor: pointer;
-}
+    .oauth-google {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background-color: #db4437;
+      color: white;
+    }
 
-.oauth.google {
-  background-color: #db4437;
-  color: white;
-}
+    .guest-link {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+    }
 
-.oauth.linkedin {
-  background-color: #0077b5;
-  color: white;
-}
+    .guest-link a {
+      color: #4f46e5;
+      text-decoration: none;
+    }
 
-.oauth.github {
-  background-color: #24292e;
-  color: white;
-}
-
-.guest-link {
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-}
-
-.guest-link a {
-  color: #4f46e5;
-  text-decoration: none;
-}
-
-.guest-link a:hover {
-  text-decoration: underline;
-}
- </style>
+    .guest-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h2>Welcome Back</h2>
-    <p class="subtitle">Sign in to your account</p>
+    <h2>Welcome</h2>
+    <p class="subtitle">Sign in to continue</p>
 
     <form id="loginForm">
       <input type="text" id="email" placeholder="Email or Username" required />
@@ -119,40 +106,44 @@ input {
 
     <div class="or-divider">OR</div>
 
-    <div class="oauth-buttons">
-      <button class="oauth google">Continue with Google</button>
-      <button class="oauth linkedin">Continue with LinkedIn</button>
-      <button class="oauth github">Continue with GitHub</button>
-    </div>
+    <button class="oauth-google" id="googleLogin">Continue with Google</button>
 
     <p class="guest-link">
-      <a href="#" id="guestAccess">Try Guest Demo</a>
+      <a href="#" id="guestAccess">Try as Guest</a>
     </p>
   </div>
 
- <script>
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
+  <script>
+    // Handle form sign in
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
 
-  // Store to localStorage (you could later replace this with real API calls)
-  localStorage.setItem("user", JSON.stringify({ email, password }));
+      // Store to localStorage (mock)
+      localStorage.setItem("user", JSON.stringify({ email, password }));
 
-  // Redirect to a dashboard or next page
-  window.location.href = "dashboard.html";
-});
+      // Redirect to home
+      window.location.href = "home.html";
+    });
 
-document.getElementById("guestAccess").addEventListener("click", function (e) {
-  e.preventDefault();
+    // Guest access
+    document.getElementById("guestAccess").addEventListener("click", function (e) {
+      e.preventDefault();
+      localStorage.setItem("user", JSON.stringify({ guest: true }));
+      window.location.href = "home.html";
+    });
 
-  // Simulate guest access
-  localStorage.setItem("user", JSON.stringify({ guest: true }));
-
-  // Redirect to dashboard or guest page
-  window.location.href = "dashboard.html";
-});
- </script>
-
+    // Google OAuth Login (placeholder)
+    document.getElementById("googleLogin").addEventListener("click", function () {
+      // Simulate Google login: you’d replace this with real OAuth logic
+      const dummyGoogleUser = {
+        email: "googleuser@example.com",
+        provider: "google"
+      };
+      localStorage.setItem("user", JSON.stringify(dummyGoogleUser));
+      window.location.href = "home.html";
+    });
+  </script>
 </body>
 </html>
