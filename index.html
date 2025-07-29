@@ -1,119 +1,138 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Detailed Resume Builder</title>
+  <title>Extensive Resume Builder</title>
 </head>
 <body>
-  <h1>Detailed Resume Builder</h1>
-
-  <form action="#review" method="get">
-    <!-- Personal Info -->
-    <h2>Personal Information</h2>
+  <h1>Resume Builder</h1>
+  <form action="#resume" method="get">
+    <!-- 1. Personal Information -->
+    <h2>1. Personal Information</h2>
     <label>Full Name: <input type="text" name="name" required></label><br><br>
+    <label>Date of Birth: <input type="date" name="dob" required></label><br><br>
+    <label>Gender: 
+      <select name="gender" required>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+    </label><br><br>
     <label>Email: <input type="email" name="email" required></label><br><br>
     <label>Phone: <input type="text" name="phone" required></label><br><br>
     <label>Address: <input type="text" name="address" required></label><br><br>
+    <label>LinkedIn: <input type="url" name="linkedin"></label><br><br>
+    <label>GitHub: <input type="url" name="github"></label><br><br>
+    <label>Portfolio: <input type="url" name="portfolio"></label><br><br>
 
-    <!-- Summary -->
-    <h2>Professional Summary</h2>
-    <label><textarea name="summary" rows="5" cols="60" required></textarea></label><br><br>
+    <!-- 2. Career Objective -->
+    <h2>2. Career Objective</h2>
+    <textarea name="objective" rows="5" cols="70" required></textarea><br><br>
 
-    <!-- Education Section -->
-    <h2>Education</h2>
-    <label>Degree: <input type="text" name="degree" required></label><br><br>
-    <label>Department: <input type="text" name="department" required></label><br><br>
-    <label>Institution: <input type="text" name="school" required></label><br><br>
-    <label>Year of Graduation: <input type="text" name="year" required></label><br><br>
+    <!-- 3. Education (Multiple Entries) -->
+    <h2>3. Education</h2>
+    <h3>Most Recent Degree</h3>
+    <label>Degree: <input type="text" name="degree1" required></label><br><br>
+    <label>Department: <input type="text" name="dept1" required></label><br><br>
+    <label>Institution: <input type="text" name="institution1" required></label><br><br>
+    <label>Year of Passing: <input type="text" name="year1" required></label><br><br>
+    <label>Grade/CGPA: <input type="text" name="grade1" required></label><br><br>
 
-    <!-- Work Experience -->
-    <h2>Work Experience</h2>
-    <label>Job Title: <input type="text" name="job_title" required></label><br><br>
-    <label>Department: <input type="text" name="job_dept" required></label><br><br>
-    <label>Company: <input type="text" name="company" required></label><br><br>
-    <label>Duration: <input type="text" name="duration" required></label><br><br>
-    <label>Description:<br>
-      <textarea name="job_desc" rows="5" cols="60" required></textarea>
+    <h3>Previous Degree</h3>
+    <label>Degree: <input type="text" name="degree2"></label><br><br>
+    <label>Department: <input type="text" name="dept2"></label><br><br>
+    <label>Institution: <input type="text" name="institution2"></label><br><br>
+    <label>Year of Passing: <input type="text" name="year2"></label><br><br>
+    <label>Grade/CGPA: <input type="text" name="grade2"></label><br><br>
+
+    <!-- 4. Work Experience -->
+    <h2>4. Work Experience</h2>
+    <h3>Recent Job</h3>
+    <label>Job Title: <input type="text" name="job1" required></label><br><br>
+    <label>Department: <input type="text" name="job_dept1"></label><br><br>
+    <label>Company Name: <input type="text" name="company1" required></label><br><br>
+    <label>Location: <input type="text" name="location1" required></label><br><br>
+    <label>Duration: <input type="text" name="duration1" required></label><br><br>
+    <label>Responsibilities:<br>
+      <textarea name="desc1" rows="4" cols="70" required></textarea>
     </label><br><br>
 
-    <!-- Skills -->
-    <h2>Skills</h2>
-    <label><textarea name="skills" rows="4" cols="60" required></textarea></label><br><br>
-
-    <!-- Projects -->
-    <h2>Projects</h2>
-    <label>Project Title: <input type="text" name="project_title" required></label><br><br>
-    <label>Description:<br>
-      <textarea name="project_desc" rows="4" cols="60" required></textarea>
+    <h3>Previous Job</h3>
+    <label>Job Title: <input type="text" name="job2"></label><br><br>
+    <label>Department: <input type="text" name="job_dept2"></label><br><br>
+    <label>Company Name: <input type="text" name="company2"></label><br><br>
+    <label>Location: <input type="text" name="location2"></label><br><br>
+    <label>Duration: <input type="text" name="duration2"></label><br><br>
+    <label>Responsibilities:<br>
+      <textarea name="desc2" rows="4" cols="70"></textarea>
     </label><br><br>
 
-    <!-- Certifications -->
-    <h2>Certifications</h2>
-    <label>Certification Title: <input type="text" name="cert_title"></label><br><br>
-    <label>Issuing Organization: <input type="text" name="cert_org"></label><br><br>
-    <label>Year: <input type="text" name="cert_year"></label><br><br>
+    <!-- 5. Technical Skills -->
+    <h2>5. Skills</h2>
+    <label>Technical Skills:<br>
+      <textarea name="tech_skills" rows="3" cols="70" required></textarea>
+    </label><br><br>
+    <label>Soft Skills:<br>
+      <textarea name="soft_skills" rows="3" cols="70"></textarea>
+    </label><br><br>
 
-    <!-- Languages -->
-    <h2>Languages</h2>
-    <label>Languages Known (comma-separated): <input type="text" name="languages"></label><br><br>
+    <!-- 6. Projects -->
+    <h2>6. Projects</h2>
+    <label>Project Title: <input type="text" name="project1" required></label><br><br>
+    <label>Technology Used: <input type="text" name="proj_tech1"></label><br><br>
+    <label>Description:<br>
+      <textarea name="proj_desc1" rows="4" cols="70" required></textarea>
+    </label><br><br>
 
-    <!-- References -->
-    <h2>References</h2>
-    <label>Name: <input type="text" name="ref_name"></label><br><br>
-    <label>Relationship: <input type="text" name="ref_relation"></label><br><br>
+    <label>Second Project Title: <input type="text" name="project2"></label><br><br>
+    <label>Technology Used: <input type="text" name="proj_tech2"></label><br><br>
+    <label>Description:<br>
+      <textarea name="proj_desc2" rows="4" cols="70"></textarea>
+    </label><br><br>
+
+    <!-- 7. Certifications -->
+    <h2>7. Certifications</h2>
+    <label>Certification Name: <input type="text" name="cert1"></label><br><br>
+    <label>Issued By: <input type="text" name="cert_org1"></label><br><br>
+    <label>Year: <input type="text" name="cert_year1"></label><br><br>
+
+    <!-- 8. Awards -->
+    <h2>8. Awards & Achievements</h2>
+    <textarea name="awards" rows="4" cols="70"></textarea><br><br>
+
+    <!-- 9. Languages -->
+    <h2>9. Languages Known</h2>
+    <input type="text" name="languages" placeholder="E.g., English, Hindi, French" required><br><br>
+
+    <!-- 10. Hobbies -->
+    <h2>10. Hobbies</h2>
+    <textarea name="hobbies" rows="3" cols="70"></textarea><br><br>
+
+    <!-- 11. References -->
+    <h2>11. References</h2>
+    <label>Reference Name: <input type="text" name="ref_name"></label><br><br>
+    <label>Position: <input type="text" name="ref_position"></label><br><br>
+    <label>Organization: <input type="text" name="ref_org"></label><br><br>
     <label>Contact Info: <input type="text" name="ref_contact"></label><br><br>
 
-    <input type="submit" value="Submit and Review">
+    <!-- 12. Declaration -->
+    <h2>12. Declaration</h2>
+    <textarea name="declaration" rows="3" cols="70">I hereby declare that all the information provided above is true to the best of my knowledge.</textarea><br><br>
+
+    <!-- 13. Signature -->
+    <h2>13. Signature</h2>
+    <label>Place: <input type="text" name="place"></label><br><br>
+    <label>Date: <input type="date" name="sign_date"></label><br><br>
+    <label>Signature: <input type="text" name="signature"></label><br><br>
+
+    <!-- Submit -->
+    <input type="submit" value="Submit and Preview">
   </form>
 
   <hr>
-  <a name="review"></a>
-  <h1>Your Resume</h1>
+  <a name="resume"></a>
+  <h1>Your Resume (Review Section)</h1>
+  <p>Submitted information would appear here in an interactive version.</p>
 
-  <!-- Display Resume Section (Placeholders - not dynamic in pure HTML) -->
-  <p><strong>Name:</strong> <span id="r_name"></span></p>
-  <p><strong>Email:</strong> <span id="r_email"></span></p>
-  <p><strong>Phone:</strong> <span id="r_phone"></span></p>
-  <p><strong>Address:</strong> <span id="r_address"></span></p>
-
-  <h2>Professional Summary</h2>
-  <p id="r_summary"></p>
-
-  <h2>Education</h2>
-  <p><strong>Degree:</strong> <span id="r_degree"></span></p>
-  <p><strong>Department:</strong> <span id="r_department"></span></p>
-  <p><strong>Institution:</strong> <span id="r_school"></span></p>
-  <p><strong>Year:</strong> <span id="r_year"></span></p>
-
-  <h2>Work Experience</h2>
-  <p><strong>Job Title:</strong> <span id="r_job_title"></span></p>
-  <p><strong>Department:</strong> <span id="r_job_dept"></span></p>
-  <p><strong>Company:</strong> <span id="r_company"></span></p>
-  <p><strong>Duration:</strong> <span id="r_duration"></span></p>
-  <p id="r_job_desc"></p>
-
-  <h2>Skills</h2>
-  <p id="r_skills"></p>
-
-  <h2>Projects</h2>
-  <p><strong>Title:</strong> <span id="r_project_title"></span></p>
-  <p id="r_project_desc"></p>
-
-  <h2>Certifications</h2>
-  <p><strong>Title:</strong> <span id="r_cert_title"></span></p>
-  <p><strong>Issued By:</strong> <span id="r_cert_org"></span></p>
-  <p><strong>Year:</strong> <span id="r_cert_year"></span></p>
-
-  <h2>Languages</h2>
-  <p id="r_languages"></p>
-
-  <h2>References</h2>
-  <p><strong>Name:</strong> <span id="r_ref_name"></span></p>
-  <p><strong>Relation:</strong> <span id="r_ref_relation"></span></p>
-  <p><strong>Contact:</strong> <span id="r_ref_contact"></span></p>
-
-  <br><br>
   <button onclick="window.print()">Print Resume</button>
-
-  <!-- Note: This template does not show submitted values unless enhanced with JavaScript -->
 </body>
 </html>
