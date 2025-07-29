@@ -124,14 +124,14 @@
       localStorage.setItem("user", JSON.stringify({ email, password }));
 
       // Redirect to home
-      window.location.href = "home.html";
+      window.location.href = "index.html";
     });
 
     // Guest access
     document.getElementById("guestAccess").addEventListener("click", function (e) {
       e.preventDefault();
       localStorage.setItem("user", JSON.stringify({ guest: true }));
-      window.location.href = "home.html";
+      window.location.href = "index.html";
     });
 
     // Google OAuth Login (placeholder)
@@ -142,7 +142,7 @@
         provider: "google"
       };
       localStorage.setItem("user", JSON.stringify(dummyGoogleUser));
-      window.location.href = "home.html";
+      window.location.href = "index.html";
     });
   </script>
 </body>
