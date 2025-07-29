@@ -86,10 +86,14 @@
     }
 
     .editor-section {
-      display: flex;
+      display: none;
       flex-direction: column;
       margin-bottom: 20px;
       animation: fadeIn 0.4s ease;
+    }
+
+    .editor-section.active {
+      display: flex;
     }
 
     .editor-section input,
@@ -99,10 +103,6 @@
       border: 1px solid #ccc;
       border-radius: 6px;
       resize: vertical;
-    }
-
-    .hidden {
-      display: none;
     }
 
     .preview {
@@ -119,6 +119,7 @@
       border: 1px dashed #ccc;
       padding: 10px;
       border-radius: 8px;
+      overflow-y: auto;
     }
 
     @keyframes fadeIn {
@@ -144,65 +145,67 @@
       </nav>
       <div class="actions">
         <button class="template-btn">Switch Template</button>
-        <button class="download-btn">Download PDF</button>
+        <button class="download-btn" onclick="downloadResume()">Download PDF</button>
       </div>
     </aside>
 
     <main>
       <section id="editor">
-        <div id="header" class="editor-section">
-          <h3>Header Info</h3>
-          <input type="text" placeholder="Full Name"/>
-          <input type="text" placeholder="Title (e.g. Software Engineer)"/>
-          <input type="text" placeholder="Email"/>
-          <input type="text" placeholder="Phone"/>
-          <input type="text" placeholder="LinkedIn / Portfolio URL"/>
-        </div>
+        <form id="resumeForm">
+          <div id="header" class="editor-section active">
+            <h3>Header Info</h3>
+            <input name="name" type="text" placeholder="Full Name"/>
+            <input name="title" type="text" placeholder="Title (e.g. Software Engineer)"/>
+            <input name="email" type="text" placeholder="Email"/>
+            <input name="phone" type="text" placeholder="Phone"/>
+            <input name="linkedin" type="text" placeholder="LinkedIn / Portfolio URL"/>
+          </div>
 
-        <div id="summary" class="editor-section hidden">
-          <h3>Professional Summary</h3>
-          <textarea placeholder="Write a short summary..."></textarea>
-        </div>
+          <div id="summary" class="editor-section">
+            <h3>Professional Summary</h3>
+            <textarea name="summary" placeholder="Write a short summary..."></textarea>
+          </div>
 
-        <div id="experience" class="editor-section hidden">
-          <h3>Work Experience</h3>
-          <textarea placeholder="List your experience..."></textarea>
-        </div>
+          <div id="experience" class="editor-section">
+            <h3>Work Experience</h3>
+            <textarea name="experience" placeholder="List your experience..."></textarea>
+          </div>
 
-        <div id="education" class="editor-section hidden">
-          <h3>Education</h3>
-          <textarea placeholder="Enter your education..."></textarea>
-        </div>
+          <div id="education" class="editor-section">
+            <h3>Education</h3>
+            <textarea name="education" placeholder="Enter your education..."></textarea>
+          </div>
 
-        <div id="skills" class="editor-section hidden">
-          <h3>Skills</h3>
-          <textarea placeholder="List hard and soft skills..."></textarea>
-        </div>
+          <div id="skills" class="editor-section">
+            <h3>Skills</h3>
+            <textarea name="skills" placeholder="List hard and soft skills..."></textarea>
+          </div>
 
-        <div id="awards" class="editor-section hidden">
-          <h3>Certifications / Awards</h3>
-          <textarea placeholder="Certifications, awards, honors..."></textarea>
-        </div>
+          <div id="awards" class="editor-section">
+            <h3>Certifications / Awards</h3>
+            <textarea name="awards" placeholder="Certifications, awards, honors..."></textarea>
+          </div>
 
-        <div id="projects" class="editor-section hidden">
-          <h3>Projects / Publications</h3>
-          <textarea placeholder="Highlight key projects or work..."></textarea>
-        </div>
+          <div id="projects" class="editor-section">
+            <h3>Projects / Publications</h3>
+            <textarea name="projects" placeholder="Highlight key projects or work..."></textarea>
+          </div>
 
-        <div id="languages" class="editor-section hidden">
-          <h3>Languages</h3>
-          <textarea placeholder="List languages you speak..."></textarea>
-        </div>
+          <div id="languages" class="editor-section">
+            <h3>Languages</h3>
+            <textarea name="languages" placeholder="List languages you speak..."></textarea>
+          </div>
 
-        <div id="custom" class="editor-section hidden">
-          <h3>Custom Section</h3>
-          <textarea placeholder="Add any other relevant info..."></textarea>
-        </div>
+          <div id="custom" class="editor-section">
+            <h3>Custom Section</h3>
+            <textarea name="custom" placeholder="Add any other relevant info..."></textarea>
+          </div>
+        </form>
       </section>
 
       <section class="preview">
-        <h3>Live Preview (Coming Soon)</h3>
-        <div class="preview-box">
+        <h3>Live Preview</h3>
+        <div class="preview-box" id="previewBox">
           <p>Your resume preview will appear here...</p>
         </div>
       </section>
@@ -212,12 +215,42 @@
   <script>
     function showSection(id) {
       const sections = document.querySelectorAll('.editor-section');
-      sections.forEach(section => section.classList.add('hidden'));
+      sections.forEach(section => section.classList.remove('active'));
 
       const active = document.getElementById(id);
       if (active) {
-        active.classList.remove('hidden');
+        active.classList.add('active');
       }
+    }
+
+    function downloadResume() {
+      const form = document.getElementById('resumeForm');
+      const data = new FormData(form);
+
+      let html = `<html><head><title>Resume</title><style>
+        body { font-family: Arial; padding: 40px; }
+        h1 { color: #2e3b55; }
+        section { margin-bottom: 20px; }
+        strong { display: block; margin-bottom: 5px; }
+        </style></head><body>`;
+
+      html += `<h1>${data.get("name")} - ${data.get("title")}</h1>`;
+      html += `<section><strong>Contact</strong>Email: ${data.get("email")}<br>Phone: ${data.get("phone")}<br>LinkedIn: ${data.get("linkedin")}</section>`;
+      html += `<section><strong>Summary</strong><p>${data.get("summary")}</p></section>`;
+      html += `<section><strong>Experience</strong><p>${data.get("experience")}</p></section>`;
+      html += `<section><strong>Education</strong><p>${data.get("education")}</p></section>`;
+      html += `<section><strong>Skills</strong><p>${data.get("skills")}</p></section>`;
+      html += `<section><strong>Certifications / Awards</strong><p>${data.get("awards")}</p></section>`;
+      html += `<section><strong>Projects</strong><p>${data.get("projects")}</p></section>`;
+      html += `<section><strong>Languages</strong><p>${data.get("languages")}</p></section>`;
+      html += `<section><strong>Additional Info</strong><p>${data.get("custom")}</p></section>`;
+
+      html += `</body></html>`;
+
+      const win = window.open("", "_blank");
+      win.document.write(html);
+      win.document.close();
+      win.print();
     }
   </script>
 </body>
