@@ -1,138 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Extensive Resume Builder</title>
+  <meta charset="UTF-8">
+  <title>Resume</title>
 </head>
 <body>
-  <h1>Resume Builder</h1>
-  <form action="#resume" method="get">
-    <!-- 1. Personal Information -->
-    <h2>1. Personal Information</h2>
-    <label>Full Name: <input type="text" name="name" required></label><br><br>
-    <label>Date of Birth: <input type="date" name="dob" required></label><br><br>
-    <label>Gender: 
-      <select name="gender" required>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Other</option>
-      </select>
-    </label><br><br>
-    <label>Email: <input type="email" name="email" required></label><br><br>
-    <label>Phone: <input type="text" name="phone" required></label><br><br>
-    <label>Address: <input type="text" name="address" required></label><br><br>
-    <label>LinkedIn: <input type="url" name="linkedin"></label><br><br>
-    <label>GitHub: <input type="url" name="github"></label><br><br>
-    <label>Portfolio: <input type="url" name="portfolio"></label><br><br>
 
-    <!-- 2. Career Objective -->
-    <h2>2. Career Objective</h2>
-    <textarea name="objective" rows="5" cols="70" required></textarea><br><br>
-
-    <!-- 3. Education (Multiple Entries) -->
-    <h2>3. Education</h2>
-    <h3>Most Recent Degree</h3>
-    <label>Degree: <input type="text" name="degree1" required></label><br><br>
-    <label>Department: <input type="text" name="dept1" required></label><br><br>
-    <label>Institution: <input type="text" name="institution1" required></label><br><br>
-    <label>Year of Passing: <input type="text" name="year1" required></label><br><br>
-    <label>Grade/CGPA: <input type="text" name="grade1" required></label><br><br>
-
-    <h3>Previous Degree</h3>
-    <label>Degree: <input type="text" name="degree2"></label><br><br>
-    <label>Department: <input type="text" name="dept2"></label><br><br>
-    <label>Institution: <input type="text" name="institution2"></label><br><br>
-    <label>Year of Passing: <input type="text" name="year2"></label><br><br>
-    <label>Grade/CGPA: <input type="text" name="grade2"></label><br><br>
-
-    <!-- 4. Work Experience -->
-    <h2>4. Work Experience</h2>
-    <h3>Recent Job</h3>
-    <label>Job Title: <input type="text" name="job1" required></label><br><br>
-    <label>Department: <input type="text" name="job_dept1"></label><br><br>
-    <label>Company Name: <input type="text" name="company1" required></label><br><br>
-    <label>Location: <input type="text" name="location1" required></label><br><br>
-    <label>Duration: <input type="text" name="duration1" required></label><br><br>
-    <label>Responsibilities:<br>
-      <textarea name="desc1" rows="4" cols="70" required></textarea>
-    </label><br><br>
-
-    <h3>Previous Job</h3>
-    <label>Job Title: <input type="text" name="job2"></label><br><br>
-    <label>Department: <input type="text" name="job_dept2"></label><br><br>
-    <label>Company Name: <input type="text" name="company2"></label><br><br>
-    <label>Location: <input type="text" name="location2"></label><br><br>
-    <label>Duration: <input type="text" name="duration2"></label><br><br>
-    <label>Responsibilities:<br>
-      <textarea name="desc2" rows="4" cols="70"></textarea>
-    </label><br><br>
-
-    <!-- 5. Technical Skills -->
-    <h2>5. Skills</h2>
-    <label>Technical Skills:<br>
-      <textarea name="tech_skills" rows="3" cols="70" required></textarea>
-    </label><br><br>
-    <label>Soft Skills:<br>
-      <textarea name="soft_skills" rows="3" cols="70"></textarea>
-    </label><br><br>
-
-    <!-- 6. Projects -->
-    <h2>6. Projects</h2>
-    <label>Project Title: <input type="text" name="project1" required></label><br><br>
-    <label>Technology Used: <input type="text" name="proj_tech1"></label><br><br>
-    <label>Description:<br>
-      <textarea name="proj_desc1" rows="4" cols="70" required></textarea>
-    </label><br><br>
-
-    <label>Second Project Title: <input type="text" name="project2"></label><br><br>
-    <label>Technology Used: <input type="text" name="proj_tech2"></label><br><br>
-    <label>Description:<br>
-      <textarea name="proj_desc2" rows="4" cols="70"></textarea>
-    </label><br><br>
-
-    <!-- 7. Certifications -->
-    <h2>7. Certifications</h2>
-    <label>Certification Name: <input type="text" name="cert1"></label><br><br>
-    <label>Issued By: <input type="text" name="cert_org1"></label><br><br>
-    <label>Year: <input type="text" name="cert_year1"></label><br><br>
-
-    <!-- 8. Awards -->
-    <h2>8. Awards & Achievements</h2>
-    <textarea name="awards" rows="4" cols="70"></textarea><br><br>
-
-    <!-- 9. Languages -->
-    <h2>9. Languages Known</h2>
-    <input type="text" name="languages" placeholder="E.g., English, Hindi, French" required><br><br>
-
-    <!-- 10. Hobbies -->
-    <h2>10. Hobbies</h2>
-    <textarea name="hobbies" rows="3" cols="70"></textarea><br><br>
-
-    <!-- 11. References -->
-    <h2>11. References</h2>
-    <label>Reference Name: <input type="text" name="ref_name"></label><br><br>
-    <label>Position: <input type="text" name="ref_position"></label><br><br>
-    <label>Organization: <input type="text" name="ref_org"></label><br><br>
-    <label>Contact Info: <input type="text" name="ref_contact"></label><br><br>
-
-    <!-- 12. Declaration -->
-    <h2>12. Declaration</h2>
-    <textarea name="declaration" rows="3" cols="70">I hereby declare that all the information provided above is true to the best of my knowledge.</textarea><br><br>
-
-    <!-- 13. Signature -->
-    <h2>13. Signature</h2>
-    <label>Place: <input type="text" name="place"></label><br><br>
-    <label>Date: <input type="date" name="sign_date"></label><br><br>
-    <label>Signature: <input type="text" name="signature"></label><br><br>
-
-    <!-- Submit -->
-    <input type="submit" value="Submit and Preview">
-  </form>
+  <!-- Personal Information -->
+  <header>
+    <h1>John Doe</h1>
+    <p>Full Stack Developer</p>
+    <p>Email: johndoe@example.com | Phone: +1-234-567-8901</p>
+    <p>LinkedIn: linkedin.com/in/johndoe | Portfolio: johndoe.dev</p>
+    <p>Location: New York, USA</p>
+  </header>
 
   <hr>
-  <a name="resume"></a>
-  <h1>Your Resume (Review Section)</h1>
-  <p>Submitted information would appear here in an interactive version.</p>
 
-  <button onclick="window.print()">Print Resume</button>
+  <!-- Career Objective -->
+  <section>
+    <h2>Career Objective</h2>
+    <p>Motivated and detail-oriented software developer with 5+ years of experience in building scalable web applications. Seeking to leverage expertise in modern frameworks and teamwork to deliver impactful solutions.</p>
+  </section>
+
+  <hr>
+
+  <!-- Education -->
+  <section>
+    <h2>Education</h2>
+    <h3>Bachelor of Technology in Computer Science</h3>
+    <p>ABC University, New York</p>
+    <p>2015 - 2019</p>
+    <p>GPA: 3.8 / 4.0</p>
+  </section>
+
+  <hr>
+
+  <!-- Work Experience -->
+  <section>
+    <h2>Work Experience</h2>
+    
+    <h3>Senior Software Engineer</h3>
+    <p>XYZ Tech Inc., San Francisco | Jan 2022 - Present</p>
+    <ul>
+      <li>Led development of scalable APIs using Node.js and MongoDB.</li>
+      <li>Mentored junior developers and conducted code reviews.</li>
+      <li>Improved performance of legacy systems by 35%.</li>
+    </ul>
+
+    <h3>Frontend Developer</h3>
+    <p>WebStart LLC, New York | Jun 2019 - Dec 2021</p>
+    <ul>
+      <li>Developed UI components using React and Redux.</li>
+      <li>Worked closely with designers to implement responsive layouts.</li>
+      <li>Contributed to product strategy and user experience improvements.</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- Projects -->
+  <section>
+    <h2>Projects</h2>
+
+    <h3>SmartTask – Task Management App</h3>
+    <p>A web app for managing personal and team tasks efficiently.</p>
+    <p>Technologies: React, Node.js, Express, MongoDB</p>
+    <p>Role: Full Stack Developer</p>
+    <p>GitHub: <a href="#">github.com/johndoe/smarttask</a></p>
+
+    <h3>Portfolio Website</h3>
+    <p>Personal website showcasing my resume, blog, and contact info.</p>
+    <p>Technologies: HTML, CSS, JavaScript</p>
+    <p>GitHub: <a href="#">github.com/johndoe/portfolio</a></p>
+  </section>
+
+  <hr>
+
+  <!-- Skills -->
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>Languages: JavaScript, Python, Java</li>
+      <li>Frameworks: React, Node.js, Express</li>
+      <li>Databases: MongoDB, MySQL</li>
+      <li>Tools: Git, Docker, Postman</li>
+      <li>Soft Skills: Communication, Problem-solving, Teamwork</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- Certifications -->
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      <li>Certified React Developer – Codecademy – 2021</li>
+      <li>Full Stack Web Development – Coursera – 2020</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- Awards and Achievements -->
+  <section>
+    <h2>Awards & Achievements</h2>
+    <ul>
+      <li>Winner – HackNYC 2022 Hackathon</li>
+      <li>Employee of the Month – XYZ Tech Inc. (March 2023)</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- Languages -->
+  <section>
+    <h2>Languages</h2>
+    <ul>
+      <li>English – Native</li>
+      <li>Spanish – Intermediate</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- Publications -->
+  <section>
+    <h2>Publications</h2>
+    <ul>
+      <li>“Optimizing Node.js Performance” – Medium.com – 2023</li>
+      <li>“Modern Frontend Architecture” – Dev.to – 2022</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- Extracurricular Activities -->
+  <section>
+    <h2>Extracurricular Activities</h2>
+    <ul>
+      <li>Volunteer Coding Instructor – Code4Kids</li>
+      <li>Lead Organizer – DevTalk NYC Meetup Group</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- References -->
+  <section>
+    <h2>References</h2>
+    <p>Available upon request.</p>
+  </section>
+
 </body>
 </html>
