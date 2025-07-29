@@ -2,11 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Resume</title>
+  <title>John Doe - Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: #f5f5f5;
+      line-height: 1.6;
+      padding: 40px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #00e6e6;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: slideDown 1.2s ease;
+    }
+
+    header h1 {
+      font-size: 3em;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: #ddd;
+    }
+
+    section {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 30px 0;
+    }
+
+    /* Cursor */
+    .cursor {
+      width: 15px;
+      height: 15px;
+      border: 2px solid #00ffff;
+      border-radius: 50%;
+      position: absolute;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.15s ease-out, opacity 0.2s;
+    }
+
+    /* Animations */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Personal Information -->
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Header -->
   <header>
     <h1>John Doe</h1>
     <p>Full Stack Developer</p>
@@ -15,31 +120,22 @@
     <p>Location: New York, USA</p>
   </header>
 
-  <hr>
-
-  <!-- Career Objective -->
+  <!-- Resume Sections -->
   <section>
     <h2>Career Objective</h2>
     <p>Motivated and detail-oriented software developer with 5+ years of experience in building scalable web applications. Seeking to leverage expertise in modern frameworks and teamwork to deliver impactful solutions.</p>
   </section>
 
-  <hr>
-
-  <!-- Education -->
   <section>
     <h2>Education</h2>
     <h3>Bachelor of Technology in Computer Science</h3>
     <p>ABC University, New York</p>
-    <p>2015 - 2019</p>
-    <p>GPA: 3.8 / 4.0</p>
+    <p>2015 - 2019 | GPA: 3.8 / 4.0</p>
   </section>
 
-  <hr>
-
-  <!-- Work Experience -->
   <section>
     <h2>Work Experience</h2>
-    
+
     <h3>Senior Software Engineer</h3>
     <p>XYZ Tech Inc., San Francisco | Jan 2022 - Present</p>
     <ul>
@@ -57,41 +153,31 @@
     </ul>
   </section>
 
-  <hr>
-
-  <!-- Projects -->
   <section>
     <h2>Projects</h2>
 
     <h3>SmartTask – Task Management App</h3>
     <p>A web app for managing personal and team tasks efficiently.</p>
-    <p>Technologies: React, Node.js, Express, MongoDB</p>
-    <p>Role: Full Stack Developer</p>
+    <p><strong>Tech:</strong> React, Node.js, Express, MongoDB</p>
     <p>GitHub: <a href="#">github.com/johndoe/smarttask</a></p>
 
     <h3>Portfolio Website</h3>
-    <p>Personal website showcasing my resume, blog, and contact info.</p>
-    <p>Technologies: HTML, CSS, JavaScript</p>
+    <p>Personal website showcasing resume, blog, and contact info.</p>
+    <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
     <p>GitHub: <a href="#">github.com/johndoe/portfolio</a></p>
   </section>
 
-  <hr>
-
-  <!-- Skills -->
   <section>
     <h2>Skills</h2>
     <ul>
-      <li>Languages: JavaScript, Python, Java</li>
-      <li>Frameworks: React, Node.js, Express</li>
-      <li>Databases: MongoDB, MySQL</li>
-      <li>Tools: Git, Docker, Postman</li>
-      <li>Soft Skills: Communication, Problem-solving, Teamwork</li>
+      <li><strong>Languages:</strong> JavaScript, Python, Java</li>
+      <li><strong>Frameworks:</strong> React, Node.js, Express</li>
+      <li><strong>Databases:</strong> MongoDB, MySQL</li>
+      <li><strong>Tools:</strong> Git, Docker, Postman</li>
+      <li><strong>Soft Skills:</strong> Communication, Problem-solving, Teamwork</li>
     </ul>
   </section>
 
-  <hr>
-
-  <!-- Certifications -->
   <section>
     <h2>Certifications</h2>
     <ul>
@@ -100,9 +186,6 @@
     </ul>
   </section>
 
-  <hr>
-
-  <!-- Awards and Achievements -->
   <section>
     <h2>Awards & Achievements</h2>
     <ul>
@@ -111,9 +194,6 @@
     </ul>
   </section>
 
-  <hr>
-
-  <!-- Languages -->
   <section>
     <h2>Languages</h2>
     <ul>
@@ -122,9 +202,6 @@
     </ul>
   </section>
 
-  <hr>
-
-  <!-- Publications -->
   <section>
     <h2>Publications</h2>
     <ul>
@@ -133,9 +210,6 @@
     </ul>
   </section>
 
-  <hr>
-
-  <!-- Extracurricular Activities -->
   <section>
     <h2>Extracurricular Activities</h2>
     <ul>
@@ -144,13 +218,34 @@
     </ul>
   </section>
 
-  <hr>
-
-  <!-- References -->
   <section>
     <h2>References</h2>
     <p>Available upon request.</p>
   </section>
+
+  <!-- JavaScript for interactivity -->
+  <script>
+    // Cursor effect
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // Reveal sections on scroll
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
